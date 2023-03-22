@@ -21,6 +21,21 @@ def encode(passw):
             string += str(fake)
     return string
 
+def decode(string):
+    d = []
+    for i in string:
+        a= int(i)
+        if a>2:
+            b = a-3
+        else:
+            b = a+7
+        b= str(b)
+        d.append(b)
+    str1=""
+    for j in d:
+        str1 += j
+    return str1
+
 
 if __name__ == "__main__":
     while True:
@@ -34,3 +49,9 @@ if __name__ == "__main__":
             option_1 = input("Please enter your password to encode: ") # "12345678"
             encode_password = encode(option_1)
             print("Your password has been encoded and stored!\n")
+        elif option99 == 2:
+            decoded= decode(encode_password)
+            print(f"The encoded password is {encode_password}, and the original password is {decoded}")
+
+        else:
+            break
